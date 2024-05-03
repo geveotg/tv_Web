@@ -1,7 +1,11 @@
 import { FC } from "react";
 
-const Carts: FC = () => {
-    return <div></div>;
+const Carts: FC = (): JSX.Element => {
+    return (
+        <div>
+            
+        </div>
+    );
 };
 
 export default Carts;
