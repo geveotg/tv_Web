@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "./lib/AntdRegistry";
 import "./globals.css";
 import Providers from "./redux/provider";
+import { Footer } from "antd/es/layout/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,11 @@ export default function RootLayout({
         <html lang="en">
             <StyledComponentsRegistry>
                 <Providers>
-                    <body className={inter.className}>{children}</body>
+                    <body className={inter.className}>
+
+                        {children}
+
+                    </body>
                 </Providers>
             </StyledComponentsRegistry>
         </html>
