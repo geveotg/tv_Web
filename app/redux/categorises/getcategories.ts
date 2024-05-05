@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const CategoriesAPI = createApi({
     reducerPath: 'categories',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://vv.tvdev.club:8080/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://www.themealdb.com/api/json/v1/1/' }),
     endpoints: (builder) => ({
         getCategories: builder.query({
-            query: () => `player_api.php$%7BrequestQuery(%7B`,
+            query: () => `categories.php`,
         }),
     }),
 })

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from '../style/films.module.scss'
+import classes from '../style/cartoons.module.scss'
 import Link from "next/link";
 
 import { FaChevronRight,FaArrowDown } from "react-icons/fa";
@@ -9,7 +9,7 @@ interface Categories {
     strCategory: string;
 }
 
-const Films: FC = (): JSX.Element => {
+const Cartoons: FC = (): JSX.Element => {
     const { data, isError, isLoading, isSuccess, } = useGetCategoriesQuery('');
 
     const ProductList = data?.categories.map((el: Categories) => {
@@ -18,11 +18,11 @@ const Films: FC = (): JSX.Element => {
         )
     })
     return (
-        <div className={classes['drop_menu']}>Films <FaChevronRight className={classes['icon']} />
+        <div className={classes['drop_menu']}>Cartoons <FaChevronRight className={classes['icon']} />
             {isError && <h1>Error</h1>}
             {isLoading && <h1>Loading</h1>}
-            <div className={classes['drop_dwn']} style={{left:-67}}>
-                <h1>Films</h1>
+            <div className={classes['drop_dwn']} style={{ left: -279 }}>
+                <h1>Cartoons</h1>
                 <div className={classes['menu_inner_main']}>
                     <ul className={classes['menu_inner']}>
                         {ProductList}
@@ -53,4 +53,4 @@ const Films: FC = (): JSX.Element => {
     )
 }
 
-export default Films;
+export default Cartoons;

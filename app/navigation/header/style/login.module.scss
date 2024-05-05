@@ -1,0 +1,152 @@
+.login_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #777;
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+    position: relative;
+}
+
+.login_icon:hover,
+.login_icon.active {
+    transition: 0.3s;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.login_in_active {
+    position: absolute;
+    top: 60px;
+    right: 2px;
+    background-color: #444;
+    width: 300px;
+    height: auto;
+    padding: 15px;
+    z-index: 100;
+    border-radius: 0 0 5px 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: cursive;
+}
+
+.login_in_active h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.login_in_active input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    font-family: cursive;
+    font-weight: 700;
+    color: black;
+    font-size: 14px;
+    position: relative;
+}
+
+.remember_log-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.login_remember {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.login_remember input {
+    width: 17px;
+    height: 17px;
+}
+
+.login_remember span {
+    color: white;
+    font-size: 13px;
+}
+
+.remember_log-btn button {
+    border: 0;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+    background: red;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.remember_log-btn button:hover {
+    background: rgb(207, 0, 0);
+}
+
+.login_in_active a {
+    color: red;
+    font-size: 16px;
+    top: 50px;
+}
+
+.log_social {
+    width: 100%;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    border-radius: 15px;
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log_social h3 {
+    margin-top: 10px;
+}
+
+.log_social_icons {
+    margin-top: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.social_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #555;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.social_icon:hover {
+    opacity: 1;
+}
+
+.singup {
+    margin-top: 15px;
+    width: 100%;
+    color: white;
+}
