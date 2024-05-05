@@ -41,3 +41,11 @@
     font-family: cursive;
     font-weight: 700;
 }
+
+
+@media screen and (max-width:460px) {
+    .search_in_active input {
+        padding: 7px 5px;
+        width: 100px;
+    }
+}

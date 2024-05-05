@@ -2,21 +2,26 @@ import { FC } from "react";
 import classes from '../style/cartoons.module.scss'
 import Link from "next/link";
 
-import { FaChevronRight,FaArrowDown } from "react-icons/fa";
+import { FaChevronRight, FaArrowDown } from "react-icons/fa";
 import { useGetCategoriesQuery } from "@/app/redux/categorises/getcategories";
 
 interface Categories {
-    strCategory: string;
+    category_id: string;
+    category_name: string;
+    parent_id: number;
 }
 
 const Cartoons: FC = (): JSX.Element => {
-    const { data, isError, isLoading, isSuccess, } = useGetCategoriesQuery('');
+    const { data, isError, isLoading, isSuccess, } = useGetCategoriesQuery({
+        username: "TV-95266315",
+        password: "524228170964",
+    });
 
-    const ProductList = data?.categories.map((el: Categories) => {
-        return (
-            <li>{el.strCategory}</li>
-        )
-    })
+    const ProductList =
+        data &&
+        data?.map((el: Categories) => {
+            return <li key={el.category_id}>{el.category_name}</li>;
+        });
     return (
         <div className={classes['drop_menu']}>Cartoons <FaChevronRight className={classes['icon']} />
             {isError && <h1>Error</h1>}

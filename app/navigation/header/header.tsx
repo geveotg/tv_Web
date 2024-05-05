@@ -41,10 +41,10 @@ const Header: FC = () => {
     return (
         <div className={classes["main"]}>
             <div className={classes["nav"]}>
-                <Link className={classes["home"]} href={"/"}>
+                <Link className={classes['home']} href={"/"}>
                     Home
                 </Link>
-                <div className={classes["menu_links"]}>
+                <div className={`${classes["menu_links"]} ${menu ? classes['active'] : ''}`}>
                     <Films />
                     <Serials />
                     <Cartoons />
@@ -66,8 +66,7 @@ const Header: FC = () => {
                     className={`${classes["Responsive_Menu"]} ${menu ? classes["active"] : ""}`}
                     onClick={() => {
                         setmenu(!menu);
-                    }}
-                >
+                    }}>
                     <GiHamburgerMenu />
                 </p>
             </div>
