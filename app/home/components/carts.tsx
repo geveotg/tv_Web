@@ -6,15 +6,14 @@ import classes from '../style/carts.module.scss'
 import { dataFilms } from "@/app/datas/data";
 
 interface Films {
-    category_id: string;
-    category_name: string; 
-    parent_id: number;
-}
-interface Props {
-    select: (data: string) => void
+    idCategory: string;
+    strCategory: string;
+    strCategoryThumb: string;
+    strCategoryDescription: string;
 }
 
-const Carts: FC<Props> = ({ select }): JSX.Element => {
+
+const Carts: FC = (): JSX.Element => {
 
     // const [state, setState] = useState()    
     // const requestQuery = (object: Record<string, unknown>) => {
@@ -58,16 +57,15 @@ const Carts: FC<Props> = ({ select }): JSX.Element => {
     const { data, isError, isLoading, isSuccess } = useGetFilmQuery({})
     console.log(data, 'rtk query');
     const RenderFilm = () => {
-        return data?.categories.map(({ category_id, category_name, parent_id }: Films) => {
+        return data?.categories.map(({ idCategory, strCategory, strCategoryThumb, strCategoryDescription, }: Films) => {
             return (
                 <div
                     className={classes['container-data']}
-                    key={parent_id}
-                // onClick={() => select(category_name)}
+                    key={idCategory}
                 >
                     <div className={classes['h2']}>
-                        <p>{category_id}ved</p>
-                        <h2>{category_name}dfv</h2>
+                        <p>{strCategory}</p>
+                        <h2 style={{fontSize:9}}>{strCategoryDescription}</h2>
                     </div>
                 </div>
             )
