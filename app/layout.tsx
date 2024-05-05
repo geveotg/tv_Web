@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "./lib/AntdRegistry";
 import "./globals.css";
 import Providers from "./redux/provider";
-import { Footer } from "antd/es/layout/layout";
+import Footer from "./navigation/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
