@@ -4,6 +4,9 @@ import { FC, useEffect, useState } from "react";
 import { useGetFilmQuery } from "@/app/redux/future/films/filmsApi";
 import classes from "../style/carts.module.scss";
 import { dataFilms } from "@/app/datas/data";
+import { url } from "inspector";
+import { MdOutlineSlowMotionVideo } from "react-icons/md";
+
 
 interface Films {
     added: string;
@@ -82,10 +85,30 @@ const Carts: FC = (): JSX.Element => {
         return data?.map(({ stream_id, stream_icon, name, stream_type }: Films, i: number) => {
             if (i < 20) {
                 return (
-                    <div className={classes["container-data"]} key={stream_id}>
-                        <div className={classes["h2"]}>
-                            <p>{name}</p>
-                            <h2 style={{ fontSize: 9 }}>{stream_type}</h2>
+                    <div
+                        className={classes["container-data"]}
+                        key={stream_id}
+                    >
+                        <div className={classes['container-router']}>
+
+                            <div className={classes["container-router-fix"]}>
+
+                                <div className={classes['image-div']}>
+                                    <img
+                                        className={classes['imag']}
+                                        src={stream_icon}
+                                        alt="img"
+                                    />
+                                    <p className={classes['icone']}>
+                                        <MdOutlineSlowMotionVideo />
+                                    </p>
+                                </div>
+                                <div className={classes['container-text']}>
+
+                                    <p className={classes['p']}>{name}</p>
+                                    <h2 style={{ fontSize: 10 }}> type: {stream_type}</h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );
@@ -93,7 +116,12 @@ const Carts: FC = (): JSX.Element => {
         });
     };
 
-    return <div className={classes["container"]}>{RenderFilm()}</div>;
+    return <div className={classes["container"]}>
+        <div className={classes['render-container']}>
+            {RenderFilm()}
+        </div>
+
+    </div>;
 };
 
 export default Carts;
