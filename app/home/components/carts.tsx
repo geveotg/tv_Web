@@ -24,7 +24,7 @@ interface Films {
     rating_5based: number;
     trailer: string;
 }
-
+//
 const Carts: FC = (): JSX.Element => {
     const { data, isError, isLoading, isSuccess } = useGetFilmQuery({
         username: "TV-95266315",
