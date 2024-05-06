@@ -1,7 +1,7 @@
 .container-data {
     height: 280px;
     width: 170px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 
     .container-router {
         display: flex;
@@ -28,7 +28,6 @@
                     height: 210px;
                 }
 
-
                 .icone {
                     display: flex;
                     justify-content: center;
@@ -38,9 +37,6 @@
                     opacity: 0;
                     transition: 0.5s;
                 }
-
-
-
             }
 
             .image-div:hover .icone {
@@ -49,18 +45,14 @@
                 transition: 0.5s;
             }
 
-            .image-div>* {
+            .image-div > * {
                 grid-column: 1/-1;
                 grid-row: 1/-1;
-
             }
 
             .image-div:hover {
                 opacity: 0.7;
-
             }
-
-
         }
 
         .container-router-fix:hover {
@@ -68,9 +60,6 @@
             transform: scale(1.02);
             transition: 0.5s;
         }
-
-
-
 
         .container-text {
             height: 20%;
@@ -92,13 +81,26 @@
 }
 
 .container {
-    width: 75%;
+    width: 100%;
     display: flex;
 
     .render-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-
     }
+}
+
+.stars_container {
+    display: flex;
+}
+
+.green_star {
+    color: yellowgreen;
+    font-size: 25px;
+}
+
+.simple_star {
+    color: rgb(246, 247, 246);
+    font-size: 25px;
 }

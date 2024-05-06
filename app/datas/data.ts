@@ -246,11 +246,4 @@ export const dataFilms = [
         custom_sid: null,
         direct_source: "",
     },
-    {
-        num: 14,
-        name: "The Late Bloomer",
-        stream_type: "movie",
-        stream_id: 160119,
-        stream_icon: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/al9PDW3l",
-    },
 ];

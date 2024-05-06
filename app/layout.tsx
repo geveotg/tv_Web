@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "./lib/AntdRegistry";
 import "./globals.css";
 import Providers from "./redux/provider";
 import Footer from "./navigation/footer/footer";
+import Header from "./navigation/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ export default function RootLayout({
             <StyledComponentsRegistry>
                 <Providers>
                     <body className={inter.className}>
-
+                        <Header />
                         {children}
                         <Footer />
                     </body>

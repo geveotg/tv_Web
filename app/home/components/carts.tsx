@@ -4,9 +4,8 @@ import { FC, useEffect, useState } from "react";
 import { useGetFilmQuery } from "@/app/redux/future/films/filmsApi";
 import classes from "../style/carts.module.scss";
 import { dataFilms } from "@/app/datas/data";
-import { url } from "inspector";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
-
+import { IoMdStar } from "react-icons/io";
 
 interface Films {
     added: string;
@@ -27,85 +26,36 @@ interface Films {
 }
 
 const Carts: FC = (): JSX.Element => {
-    // const [state, setState] = useState()
-    // const requestQuery = (object: Record<string, unknown>) => {
-    //     let query = "";
-    //     for (let key in object) {
-    //         query += key + "=" + object[key] + "&";
-    //     }
-
-    //     if (!query) return query;
-
-    //     return "?" + query.substring(0, query.length - 1);
-    // };
-    // function getData() {
-    //     fetch(
-    //         `http://vv.tvdev.club:8080/player_api.php${requestQuery({
-    //             username: "TV-95266315",
-    //             password: "524228170964",
-    //         })}&action=get_vod_streams`
-    //     )
-    //         .then((data) => data.json())
-    //         .then((data) => console.log(data));
-    // }
-
-    // function getCategories() {
-    //     fetch(
-    //         `http://vv.tvdev.club:8080/player_api.php${requestQuery({
-    //             username: "TV-95266315",
-    //             password: "524228170964",
-    //         })}&action=get_vod_categories`
-    //     )
-    //         .then((data) => data.json())
-    //         .then((data) => setState(data));
-    // }
-    // useEffect(() => {
-    //     getData();
-    //     getCategories();
-    // }, []);
-
-    console.log(dataFilms);
-
     const { data, isError, isLoading, isSuccess } = useGetFilmQuery({
         username: "TV-95266315",
         password: "524228170964",
     });
 
-    useEffect(() => {
-        let arr = [];
-        if (data) {
-            for (let i = 0; i < 20; i++) {
-                arr.push(data[i]);
-            }
-            console.log(JSON.stringify(data));
-        }
-    }, [data]);
-
     const RenderFilm = () => {
-        return data?.map(({ stream_id, stream_icon, name, stream_type }: Films, i: number) => {
-            if (i < 20) {
+        return dataFilms?.map(
+            ({ stream_id, stream_icon, name, stream_type, rating_5based }: Films, i: number) => {
+                let arr = [];
+                for (let i = 0; i < 5; i++) {
+                    if (i <= rating_5based) {
+                        arr.push(<IoMdStar className={classes["green_star"]} />);
+                    } else {
+                        arr.push(<IoMdStar className={classes["simple_star"]} />);
+                    }
+                }
+
                 return (
-                    <div
-                        className={classes["container-data"]}
-                        key={stream_id}
-                    >
-                        <div className={classes['container-router']}>
-
+                    <div className={classes["container-data"]} key={stream_id}>
+                        <div className={classes["container-router"]}>
                             <div className={classes["container-router-fix"]}>
-
-                                <div className={classes['image-div']}>
-                                    <img
-                                        className={classes['imag']}
-                                        src={stream_icon}
-                                        alt="img"
-                                    />
-                                    <p className={classes['icone']}>
+                                <div className={classes["image-div"]}>
+                                    <img className={classes["imag"]} src={stream_icon} alt="img" />
+                                    <p className={classes["icone"]}>
                                         <MdOutlineSlowMotionVideo />
                                     </p>
+                                    <div className={classes["stars_container"]}>{arr}</div>
                                 </div>
-                                <div className={classes['container-text']}>
-
-                                    <p className={classes['p']}>{name}</p>
+                                <div className={classes["container-text"]}>
+                                    <p className={classes["p"]}>{name}</p>
                                     <h2 style={{ fontSize: 10 }}> type: {stream_type}</h2>
                                 </div>
                             </div>
@@ -113,15 +63,14 @@ const Carts: FC = (): JSX.Element => {
                     </div>
                 );
             }
-        });
+        );
     };
 
-    return <div className={classes["container"]}>
-        <div className={classes['render-container']}>
-            {RenderFilm()}
+    return (
+        <div className={classes["container"]}>
+            <div className={classes["render-container"]}>{RenderFilm()}</div>
         </div>
-
-    </div>;
+    );
 };
 
 export default Carts;
