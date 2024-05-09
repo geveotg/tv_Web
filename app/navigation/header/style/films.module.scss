@@ -125,32 +125,38 @@
     font-size: 15px;
 }
 
-
+.Categories_Response{
+    display: none;
+}
 
 @media screen and (max-width:1195px) {
+    .drop_menu{
+        margin-top: 70px;
+    }
     .drop_dwn {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        background: #555;
-        padding: 20px;
-        z-index: 1000;
-        height: auto;
-        transform: scaleY(0);
-        transition: 0.5s;
+        display: none;
     }
     .drop_menu:hover .icon {
         transform: rotate(0deg);
         transition: 0.5s;
         margin-left: 20px;
     }
+
     .drop_menu:hover .drop_dwn {
         transition: 0.5s;
-        transform: scaleY(0);
+        transform: scaleY(1);
     }
     .drop_menu::after {
-        top: 66px;
+        top: 0;
+    }
+    .Categories_Response{
+        display: block;
+        height: 0;
+        transform: scaleY(0);
+    }
+    .drop_menu:hover .Categories_Response{
+        height: auto;
+        transform: scaleY(1);
+        transition: 0.5s;
     }
 }

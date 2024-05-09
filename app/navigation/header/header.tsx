@@ -1,5 +1,6 @@
 "use client";
 import { FC, useState, useCallback, useEffect } from "react";
+import Categories_Response from "./components/categories_response";
 import classes from "./header.module.scss";
 import Link from "next/link";
 import Films from "./components/films";
