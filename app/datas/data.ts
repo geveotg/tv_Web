@@ -1,3 +1,21 @@
+export interface FilmsInt {
+    added: string;
+    category_id: string;
+    category_ids: number[];
+    container_extension: string;
+    custom_sid: null;
+    direct_source: string;
+    is_adult: number;
+    name: string;
+    num: number;
+    rating: string;
+    stream_icon: string;
+    stream_id: number;
+    stream_type: string;
+    rating_5based: number;
+    trailer: string;
+}
+
 export const dataFilms = [
     {
         num: 1,
@@ -246,4 +264,62 @@ export const dataFilms = [
         custom_sid: null,
         direct_source: "",
     },
+    {
+        num: 1,
+        name: "Adventures in Public School",
+        stream_type: "movie",
+        stream_id: 164557,
+        stream_icon:
+            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7prbaNnkmPlW3u87Yf8QYeJeNf.jpg",
+        rating: "7.5",
+        rating_5based: 3.8,
+        tmdb: 471515,
+        trailer: "",
+        added: "1701276852",
+        is_adult: 0,
+        category_id: "108",
+        category_ids: [108],
+        container_extension: "mp4",
+        custom_sid: null,
+        direct_source: "",
+    },
+      {
+        num: 1,
+        name: "Adventures in Public School",
+        stream_type: "movie",
+        stream_id: 164557,
+        stream_icon:
+            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7prbaNnkmPlW3u87Yf8QYeJeNf.jpg",
+        rating: "7.5",
+        rating_5based: 3.8,
+        tmdb: 471515,
+        trailer: "",
+        added: "1701276852",
+        is_adult: 0,
+        category_id: "108",
+        category_ids: [108],
+        container_extension: "mp4",
+        custom_sid: null,
+        direct_source: "",
+    },
+    {
+        num: 1,
+        name: "Adventures in Public School",
+        stream_type: "movie",
+        stream_id: 164557,
+        stream_icon:
+            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7prbaNnkmPlW3u87Yf8QYeJeNf.jpg",
+        rating: "7.5",
+        rating_5based: 3.8,
+        tmdb: 471515,
+        trailer: "",
+        added: "1701276852",
+        is_adult: 0,
+        category_id: "108",
+        category_ids: [108],
+        container_extension: "mp4",
+        custom_sid: null,
+        direct_source: "",
+    },
+
 ];
