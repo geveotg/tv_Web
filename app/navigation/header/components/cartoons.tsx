@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "../style/films.module.scss";
+import classes from "../style/cartoons.module.scss";
 import Link from "next/link";
 import Categories_Response from "./categories_response";
 
@@ -27,16 +27,20 @@ const Cartoons: FC = (): JSX.Element => {
 
     const getRightMenu = menu_inner_right_cartoons.map((el) => {
         return (
-            <li key={el.id}><Link className={classes["menu_inner_right_links"]} href={el.href}>
-                {el.title}
-            </Link></li>
-        )
-    })
+            <li key={el.id}>
+                <Link className={classes["menu_inner_right_links"]} href={el.href}>
+                    {el.title}
+                </Link>
+            </li>
+        );
+    });
     const getRightMenuYears = menu_inner_right_years_cartoons.map((el) => {
         return (
-            <Link className={classes["menu_inner_right_links"]} href={el.href}>{el.title}</Link>
-        )
-    })
+            <Link className={classes["menu_inner_right_links"]} href={el.href}>
+                {el.title}
+            </Link>
+        );
+    });
     return (
         <div className={classes["drop_menu"]}>
             Cartoons <FaChevronRight className={classes["icon"]} />
@@ -52,14 +56,14 @@ const Cartoons: FC = (): JSX.Element => {
                                 By years
                                 <FaArrowDown style={{ marginLeft: 5 }} />
                             </p>
-                            <div style={{ marginTop: 10 }}>
-                                {getRightMenuYears}
-                            </div>
+                            <div style={{ marginTop: 10 }}>{getRightMenuYears}</div>
                         </li>
                     </div>
                 </div>
             </div>
-            <div className={classes['Categories_Response']}><Categories_Response /></div>
+            <div className={classes["Categories_Response"]}>
+                <Categories_Response />
+            </div>
         </div>
     );
 };
