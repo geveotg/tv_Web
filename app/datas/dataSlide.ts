@@ -32,6 +32,7 @@ export const dataSlide = [
     
     {
         href:'',
+        id:1,
         image:'/images/carusel/1.jpg',
         num: 9,
         name: "The General",
@@ -97,7 +98,7 @@ export const dataSlide = [
     },
     {
         href:'',
-        id:5,
+        id:4,
         image:'/images/carusel/4.jpg',
         num: 12,
         name: "John Early: Now More Than Ever",
