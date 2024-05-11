@@ -1,8 +1,9 @@
 .ul{
-    font-size: 17px;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
-    width: 40%;
+    width: 30%;
+    letter-spacing: 1px;
     padding: 0px 50px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
@@ -10,46 +11,4 @@
 
 .ul li:hover{
     color: red;
-}
-
-@media screen and (max-width:950px) {
-    .ul{
-        width: 52%;
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width:703px) {
-    .ul{
-        font-size: 15px;
-        width: 57%;
-        padding: 0px 20px;
-    }
-}
-
-@media screen and (max-width:541px) {
-    .ul{
-        font-size: 14px;
-        width: 75%;
-    }
-}
-
-@media screen and (max-width:428px) {
-    .ul{
-        font-size: 13px;
-        row-gap: 10px;
-    }
-    .ul li{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width:380px) {
-    .ul{
-        font-size: 11px;
-        row-gap: 10px;
-    }
-    .ul li{
-        width: 100%;
-    }
 }

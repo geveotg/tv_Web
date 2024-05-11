@@ -5,23 +5,12 @@ import Categories_Response from "./categories_response";
 
 import { FaChevronRight, FaArrowDown } from "react-icons/fa";
 import { useGetCategoriesQuery } from "@/app/redux/future/films/filmsApi";
+import { getCategories } from "@/app/datas/navdata";
 import { menu_inner_right_films, menu_inner_right_years_films } from "@/app/datas/navdata";
 
-interface Categories {
-    category_id: string;
-    category_name: string;
-    parent_id: number;
-}
-
 const Films: FC = (): JSX.Element => {
-    const { data, isError, isLoading, isSuccess } = useGetCategoriesQuery({
-        username: "TV-95266315",
-        password: "524228170964",
-    });
 
-    const ProductList =
-        data &&
-        data?.map((el: Categories) => {
+    const ProductList = getCategories.map((el) => {
             return <li key={el.category_id}>{el.category_name}</li>;
         });
 
@@ -40,7 +29,6 @@ const Films: FC = (): JSX.Element => {
     return (
         <div className={classes["drop_menu"]}>
             Films <FaChevronRight className={classes["icon"]} />
-            {isError && <h1>Error</h1>}
             <div className={classes["drop_dwn"]} style={{ left: -67 }}>
                 <h1>Films</h1>
                 <div className={classes["menu_inner_main"]}>

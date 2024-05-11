@@ -13,11 +13,23 @@
     position: relative;
 }
 
+.login_close_icon{
+    display: none;
+}
+
 .login_icon:hover,
 .login_icon.active {
     transition: 0.3s;
     opacity: 1;
     transform: scale(1.1);
+}
+.login_icon.active{
+    .login_close_icon{
+        display: block;
+    }
+    .login_open_icon{
+        display: none;
+    }
 }
 
 .login_in_active {
@@ -149,4 +161,11 @@
     margin-top: 15px;
     width: 100%;
     color: white;
+}
+
+
+@media screen and (max-width:400px) {
+    .login_icon{
+        font-size: 19px;
+    }
 }

@@ -5,6 +5,7 @@ import Categories_Response from "./categories_response";
 
 import { FaChevronRight, FaArrowDown } from "react-icons/fa";
 import { useGetCategoriesQuery } from "@/app/redux/future/films/filmsApi";
+import { getCategories } from "@/app/datas/navdata";
 import { menu_inner_right_cartoons, menu_inner_right_years_cartoons } from "@/app/datas/navdata";
 
 interface Categories {
@@ -14,16 +15,9 @@ interface Categories {
 }
 
 const Cartoons: FC = (): JSX.Element => {
-    const { data, isError, isLoading, isSuccess } = useGetCategoriesQuery({
-        username: "TV-95266315",
-        password: "524228170964",
+    const ProductList = getCategories.map((el) => {
+        return <li key={el.category_id}>{el.category_name}</li>;
     });
-
-    const ProductList =
-        data &&
-        data?.map((el: Categories) => {
-            return <li key={el.category_id}>{el.category_name}</li>;
-        });
 
     const getRightMenu = menu_inner_right_cartoons.map((el) => {
         return (
@@ -44,7 +38,6 @@ const Cartoons: FC = (): JSX.Element => {
     return (
         <div className={classes["drop_menu"]}>
             Cartoons <FaChevronRight className={classes["icon"]} />
-            {isError && <h1>Error</h1>}
             <div className={classes["drop_dwn"]} style={{ left: -278 }}>
                 <h1>Cartoons</h1>
                 <div className={classes["menu_inner_main"]}>

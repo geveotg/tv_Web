@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.nav{
+.nav {
     width: 100%;
     max-width: 1200px;
     height: 60px;
@@ -15,7 +15,7 @@
     padding: 0px 20px;
 }
 
-.menu_links{
+.menu_links {
     display: flex;
 }
 
@@ -59,14 +59,14 @@
     opacity: 1;
 }
 
-.search_login_main {
+.search_login_response_main {
     margin-right: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.Responsive_Menu{
+.Responsive_Menu {
     background-color: #777;
     padding: 5px 7px;
     font-size: 20px;
@@ -79,6 +79,10 @@
     z-index: 10001;
 
     display: none;
+
+    .respMenu_close_icon {
+        display: none;
+    }
 }
 
 .Responsive_Menu:hover,
@@ -90,13 +94,22 @@
 
 
 
-
-
 @media screen and (max-width:1195px) {
-    .Responsive_Menu{
+    .Responsive_Menu {
         display: block;
     }
-    .menu_links{
+
+    .Responsive_Menu.active {
+        .respMenu_close_icon {
+            display: block;
+        }
+
+        .respMenu_open_icon {
+            display: none;
+        }
+    }
+
+    .menu_links {
         height: 0;
         width: 100%;
         background: rgba(0, 0, 0, 0.945);
@@ -112,38 +125,43 @@
         font-size: 30px;
         position: fixed;
     }
-    .menu_links.active{
+
+    .menu_links.active {
         height: 100vh;
         opacity: 1;
     }
-    .links{
+
+    .links {
         color: white;
     }
-    .links:hover{
+
+    .links:hover {
         color: rgb(255, 0, 0);
     }
+
     .links::after {
         content: '';
+        width: 0;
         top: 50px;
+        transition: 1s;
+    }
+    .links:hover::after{
+        width: 100%;
+        transition: 1s;
     }
 }
 
-@media screen and (max-width:703px) {
-    .menu_links{
-        font-size: 20px;
-    }
-    .links::after {
-        content: '';
-        top: 40px;
-    }
-}
 
 @media screen and (max-width:400px) {
-    .menu_links{
-        font-size: 15px;
+    .menu_links {
+        font-size: 25px;
     }
-    .links::after {
-        content: '';
-        top: 33px;
+
+    .search_login_response_main {
+        gap: 5px;
+    }
+    .Responsive_Menu{
+        padding: 3px 5px;
+        font-size: 19px;
     }
 }

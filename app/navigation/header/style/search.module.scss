@@ -18,11 +18,24 @@
     transition: 0.3s;
 }
 
+.search_close_icon{
+    display: none;
+}
+
 .search_icon:hover,
 .search_icon.active {
     transition: 0.3s;
     opacity: 1;
     transform: scale(1.1);
+}
+
+.search_icon.active{
+    .search_close_icon{
+        display: block;
+    }
+    .search_open_icon{
+        display: none;
+    }
 }
 
 .search_in_active {
@@ -47,5 +60,14 @@
     .search_in_active input {
         padding: 7px 5px;
         width: 100px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .search_icon{
+        font-size: 19px;
+    }
+    .search_in_active input {
+        padding: 5px;
     }
 }
