@@ -1,6 +1,6 @@
 "use client";
 import { FC } from "react";
-import classes from "../style/carts.module.scss";
+import classes from "../style/films.module.scss";
 import { dataFilms, FilmsInt } from "@/app/datas/data";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { IoMdStar } from "react-icons/io";
