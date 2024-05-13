@@ -23,9 +23,9 @@ export default function RootLayout({
             <StyledComponentsRegistry>
                 <Providers>
                     <body className={inter.className}>
-                        {/* <Header /> */}
+                        <Header />
                         {children}
-                        {/* <Footer /> */}
+                        <Footer />
                     </body>
                 </Providers>
             </StyledComponentsRegistry>

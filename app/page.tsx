@@ -7,7 +7,7 @@ import Slide from "./home/components/slide";
 export default function Home() {
     return (
         <main className={styles.main}>
-            {/* <Slide /> */}
+            <Slide />
             <Carts />
         </main>
     );
