@@ -9,23 +9,26 @@ import { getCategories } from "@/app/datas/navdata";
 import { menu_inner_right_films, menu_inner_right_years_films } from "@/app/datas/navdata";
 
 const Films: FC = (): JSX.Element => {
-
     const ProductList = getCategories.map((el) => {
-            return <li key={el.category_id}>{el.category_name}</li>;
-        });
+        return <li key={el.category_id}>{el.category_name}</li>;
+    });
 
     const getRightMenu = menu_inner_right_films.map((el) => {
         return (
-            <li key={el.id}><Link className={classes["menu_inner_right_links"]} href={el.href}>
-                {el.title}
-            </Link></li>
-        )
-    })
+            <li key={el.id}>
+                <Link className={classes["menu_inner_right_links"]} href={el.href}>
+                    {el.title}
+                </Link>
+            </li>
+        );
+    });
     const getRightMenuYears = menu_inner_right_years_films.map((el) => {
         return (
-            <Link className={classes["menu_inner_right_links"]} href={el.href}>{el.title}</Link>
-        )
-    })
+            <Link key={el.id} className={classes["menu_inner_right_links"]} href={el.href}>
+                {el.title}
+            </Link>
+        );
+    });
     return (
         <div className={classes["drop_menu"]}>
             Films <FaChevronRight className={classes["icon"]} />
@@ -40,14 +43,14 @@ const Films: FC = (): JSX.Element => {
                                 By years
                                 <FaArrowDown style={{ marginLeft: 5 }} />
                             </p>
-                            <div style={{marginTop:10}}>
-                                {getRightMenuYears}
-                            </div>
+                            <div style={{ marginTop: 10 }}>{getRightMenuYears}</div>
                         </li>
                     </div>
                 </div>
             </div>
-            <div className={classes['Categories_Response']}><Categories_Response /></div>
+            <div className={classes["Categories_Response"]}>
+                <Categories_Response />
+            </div>
         </div>
     );
 };

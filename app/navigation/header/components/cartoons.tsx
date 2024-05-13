@@ -30,7 +30,7 @@ const Cartoons: FC = (): JSX.Element => {
     });
     const getRightMenuYears = menu_inner_right_years_cartoons.map((el) => {
         return (
-            <Link className={classes["menu_inner_right_links"]} href={el.href}>
+            <Link key={el.id} className={classes["menu_inner_right_links"]} href={el.href}>
                 {el.title}
             </Link>
         );

@@ -21,16 +21,20 @@ const Serials: FC = (): JSX.Element => {
 
     const getRightMenu = menu_inner_right_serials.map((el) => {
         return (
-            <li key={el.id}><Link className={classes["menu_inner_right_links"]} href={el.href}>
-                {el.title}
-            </Link></li>
-        )
-    })
+            <li key={el.id}>
+                <Link className={classes["menu_inner_right_links"]} href={el.href}>
+                    {el.title}
+                </Link>
+            </li>
+        );
+    });
     const getRightMenuYears = menu_inner_right_years_serials.map((el) => {
         return (
-            <Link className={classes["menu_inner_right_links"]} href={el.href}>{el.title}</Link>
-        )
-    })
+            <Link key={el.id} className={classes["menu_inner_right_links"]} href={el.href}>
+                {el.title}
+            </Link>
+        );
+    });
     return (
         <div className={classes["drop_menu"]}>
             Serials <FaChevronRight className={classes["icon"]} />
@@ -45,14 +49,14 @@ const Serials: FC = (): JSX.Element => {
                                 By years
                                 <FaArrowDown style={{ marginLeft: 5 }} />
                             </p>
-                            <div style={{ marginTop: 10 }}>
-                                {getRightMenuYears}
-                            </div>
+                            <div style={{ marginTop: 10 }}>{getRightMenuYears}</div>
                         </li>
                     </div>
                 </div>
             </div>
-            <div className={classes['Categories_Response']}><Categories_Response /></div>
+            <div className={classes["Categories_Response"]}>
+                <Categories_Response />
+            </div>
         </div>
     );
 };

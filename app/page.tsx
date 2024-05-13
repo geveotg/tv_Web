@@ -1,14 +1,12 @@
-"use client";
-
-import Carts from "./home/components/carts";
+import Films from "./Home/components/films";
 import styles from "./page.module.css";
-import Slide from "./home/components/slide";
+import Slide from "./Home/components/slide";
 
 export default function Home() {
     return (
         <main className={styles.main}>
-            {/* <Slide /> */}
-            <Carts />
+            <Slide />
+            <Films />
         </main>
     );
 }
