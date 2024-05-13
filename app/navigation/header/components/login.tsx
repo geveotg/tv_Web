@@ -4,14 +4,18 @@ import classes from '../style/login.module.scss'
 
 import {FaGoogle, FaYandex, FaFacebookF, FaEdge, FaUserAlt} from "react-icons/fa";
 import { IoLogIn } from "react-icons/io5";
+import { FaUserTimes } from "react-icons/fa";
 
 const Login:FC = ()=>{
     const [login,setlogin] = useState(false)
     return (
         <div className={classes['login_main']}>
-            <p className={`${classes['login_icon']} ${login ? classes['active'] : ''}`}><FaUserAlt onClick={() => {
+            <p className={`${classes['login_icon']} ${login ? classes['active'] : ''}`} onClick={() => {
                         setlogin(!login)
-                    }} /></p>
+                    }}>
+                <FaUserAlt className={classes['login_open_icon']}/>
+                <FaUserTimes className={classes['login_close_icon']}/>
+                </p>
                     {login && (
                         <form className={classes['login_in_active']}>
                             <h1 title="login">Login</h1>

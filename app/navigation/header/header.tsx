@@ -1,5 +1,6 @@
 "use client";
 import { FC, useState, useCallback, useEffect } from "react";
+import Categories_Response from "./components/categories_response";
 import classes from "./header.module.scss";
 import Link from "next/link";
 import Films from "./components/films";
@@ -9,6 +10,7 @@ import Search from "./components/search";
 import Login from "./components/login";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Header: FC = () => {
     const [menu, setmenu] = useState(false);
@@ -33,7 +35,7 @@ const Header: FC = () => {
                     </Link>
                 </div>
             </div>
-            <div className={classes["search_login_main"]}>
+            <div className={classes["search_login_response_main"]}>
                 <Search />
                 <Login />
                 <p
@@ -42,7 +44,8 @@ const Header: FC = () => {
                         setmenu(!menu);
                     }}
                 >
-                    <GiHamburgerMenu />
+                    <GiHamburgerMenu className={classes['respMenu_open_icon']} />
+                    <AiOutlineClose className={classes['respMenu_close_icon']} />
                 </p>
             </div>
         </div>

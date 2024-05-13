@@ -1,0 +1,27 @@
+export const dataSlide = [
+    {
+        id:1,
+        image:'/images/carusel/1.jpg',
+        href:''
+    },
+    {
+        id:2,
+        image:'/images/carusel/2.jpg',
+        href:''
+    },
+    {
+        id:3,
+        image:'/images/carusel/3.jpg',
+        href:''
+    },
+    {
+        id:4,
+        image:'/images/carusel/4.jpg',
+        href:''
+    },
+    {
+        id:5,
+        image:'/images/carusel/5.jpg',
+        href:''
+    },
+]

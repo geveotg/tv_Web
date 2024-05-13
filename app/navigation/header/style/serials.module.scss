@@ -66,7 +66,7 @@
 }
 
 .menu_inner {
-    width: 47%;
+    width: 58%;
     display: flex;
     align-content: space-between;
     flex-wrap: wrap;
@@ -74,10 +74,13 @@
 }
 
 .menu_inner li {
-    width: 50%;
+    width: 27%;
+    display: flex;
+    justify-content: center;
     padding: 10px 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
+    font-size: 20px;
 }
 
 .menu_inner li:hover {
@@ -125,33 +128,36 @@
     font-size: 15px;
 }
 
-
+.Categories_Response{
+    display: none;
+}
 
 
 @media screen and (max-width:1195px) {
     .drop_dwn {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        background: #555;
-        padding: 20px;
-        z-index: 1000;
-        height: auto;
-        transform: scaleY(0);
-        transition: 0.5s;
+        display: none;
     }
     .drop_menu:hover .icon {
         transform: rotate(0deg);
         transition: 0.5s;
         margin-left: 20px;
     }
+
     .drop_menu:hover .drop_dwn {
         transition: 0.5s;
-        transform: scaleY(0);
+        transform: scaleY(1);
     }
     .drop_menu::after {
-        top: 66px;
+        top: 0;
+    }
+    .Categories_Response{
+        display: block;
+        height: 0;
+        opacity: 0;
+    }
+    .drop_menu:hover .Categories_Response{
+        height: auto;
+        opacity: 1;
+        transition: 2s;
     }
 }

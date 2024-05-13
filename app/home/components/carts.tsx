@@ -7,6 +7,7 @@ import RenderFilms from "./renderFilms";
 import RenderSerials from "./renderSerials";
 
 const Carts: FC = (): JSX.Element => {
+    //
     const { data, isError, isLoading, isSuccess } = useGetFilmQuery({
         username: "TV-95266315",
         password: "524228170964",
