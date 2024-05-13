@@ -7,11 +7,10 @@ import RenderFilm from "./renderFilm";
 import RenderSerials from "./renderSerials";
 
 const Films: FC = (): JSX.Element => {
-    //
-    const { data, isError, isLoading, isSuccess } = useGetFilmQuery({
-        username: "TV-95266315",
-        password: "524228170964",
-    });
+    // const { data, isError, isLoading, isSuccess } = useGetFilmQuery({
+    //     username: "TV-95266315",
+    //     password: "524228170964",
+    // });
 
     return (
         <div className={classes["container"]}>
