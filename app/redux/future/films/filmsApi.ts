@@ -6,8 +6,8 @@ export const filmsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: "http://vv.tvdev.club:8080/" }),
     endpoints: (builder) => ({
         getFilm: builder.query<any, {}>({
-            query: (rquestPayload) =>
-                `player_api.php${requestQuery(rquestPayload)}&action=get_vod_streams`,
+            query: (reqpay) =>
+                `player_api.php${requestQuery(reqpay)}&action=get_vod_streams`,
         }),
         getCategories: builder.query<any, {}>({
             query: (queryPayload) =>

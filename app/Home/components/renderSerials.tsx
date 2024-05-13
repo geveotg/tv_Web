@@ -10,18 +10,15 @@ import { GoChevronRight } from "react-icons/go";
 const RenderSerials: FC = (): JSX.Element => {
     const RenderSerial = () => {
         return dataFilms?.map(
-            ({ stream_id, stream_icon, name, stream_type, rating_5based, category_id, category_ids }: FilmsInt, i: number) => {
-
+            ({ stream_id, stream_icon, name, stream_type, rating_5based, category_id, category_ids, rating }: FilmsInt, i: number) => {
                 let stars = [];
                 for (let i = 0; i < 5; i++) {
                     if (i <= rating_5based) {
-                        stars.push(<IoMdStar className={classes["green_star"]} />);
+                        stars.push(<IoMdStar className={classes["green_star"]} />)
                     } else {
-                        stars.push(<IoMdStar className={classes["simple_star"]} />);
+                        stars.push(<IoMdStar className={classes["simple_star"]} />)
                     }
                 }
-
-
                 return (
                     <div className={classes["container-data"]} key={stream_id}>
                         <div className={classes["container-router"]}>
@@ -37,12 +34,12 @@ const RenderSerials: FC = (): JSX.Element => {
                                 </div>
                                 <div className={classes["container-text"]}>
                                     <p className={classes["p"]}>{name}</p>
-                                    <h2 style={{ fontSize: 10 }}> type: {stream_type}</h2>
+                                    <h2 style={{ fontSize: 10 }}> rating: {rating}</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                );
+                )
             }
         )
     };

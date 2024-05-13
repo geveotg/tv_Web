@@ -4,6 +4,7 @@ import classes from '../style/carts.module.scss'
 import { dataFilms, FilmsInt } from "@/app/datas/data";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { IoMdStar } from "react-icons/io";
+import { GoChevronRight } from "react-icons/go";
 
 
 const RenderFilms: FC = (): JSX.Element => {
@@ -45,8 +46,13 @@ const RenderFilms: FC = (): JSX.Element => {
 
 
     return (
-        <div className={classes['renderContainers']}>
-            {RenderFilm()}
+        <div className={classes['container']}>
+            <div className={classes['containerText']}>
+                <h1 className={classes['iconH1']} >Serialner<GoChevronRight /> </h1>
+            </div>
+            <div className={classes['renderContainers']}>
+                {RenderFilm()}
+            </div>
         </div>
     )
 }
