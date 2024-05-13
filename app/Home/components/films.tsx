@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { useGetFilmQuery } from "@/app/redux/future/films/filmsApi";
-import classes from "../style/carts.module.scss";
+import classes from "../style/films.module.scss";
 import RenderFilm from "./renderFilm";
 import RenderSerials from "./renderSerials";
 
